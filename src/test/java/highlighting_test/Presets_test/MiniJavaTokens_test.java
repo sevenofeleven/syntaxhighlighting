@@ -55,6 +55,6 @@ class MiniJavaToken_test {
     // given
     String s = "24124 \"banal\" 124\"239\"666";
 
-    assert (expect_tokens(s, "24124", new String[] {"123", "239", "666"}));
+    assert (expect_tokens(s, "24124", new String[] {"124", "239", "666"}));
   }
 }
