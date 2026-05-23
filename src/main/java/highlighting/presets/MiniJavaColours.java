@@ -10,4 +10,6 @@ public final class MiniJavaColours {
   public static final Color LINE_COMMENT_COLOUR = new Color(0, 128, 0);
   public static final Color BLOCK_COMMENT_COLOUR = new Color(0, 160, 0);
   public static final Color JAVADOC_COMMENT_COLOUR = new Color(0, 160, 128);
+  public static final Color NUMBERS_COLOUR = new Color(150, 150, 30);
+  public static final Color OPERATORS_COLOUR = new Color(10, 50, 80);
 }
