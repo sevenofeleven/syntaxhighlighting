@@ -26,7 +26,7 @@ public final class MiniJavaTokens {
         // comments
         Token.of(Pattern.compile("//.*$"), MiniJavaColours.BLOCK_COMMENT_COLOUR),
         // javadoc
-        Token.of(Pattern.compile("/\\*\\*(\\w+)\\*/"), MiniJavaColours.JAVADOC_COMMENT_COLOUR),
+        Token.of(Pattern.compile("/\\*\\*.*\\*/"), MiniJavaColours.JAVADOC_COMMENT_COLOUR),
         // mehrzeilig
         Token.of(Pattern.compile("/\\*(\\w+)\\*/"), MiniJavaColours.BLOCK_COMMENT_COLOUR),
         // keywords
@@ -38,7 +38,7 @@ public final class MiniJavaTokens {
         Token.of(
             Pattern.compile("(\\d+)(\\.(\\d+)(e[+-]?\\d+)?f?)?"), MiniJavaColours.NUMBERS_COLOUR),
         // characters
-        Token.of(Pattern.compile("\\."), MiniJavaColours.CHAR_LITERAL_COLOUR),
+        Token.of(Pattern.compile("'(\\\\.|\\\\u[A-Fa-f0-9]+|.)'"), MiniJavaColours.CHAR_LITERAL_COLOUR),
         // operators
         Token.of(
             Pattern.compile("(<=|>=|==|!=|\\+\\+|--|\\+=|-=|\\|\\||&&|[+\\-*/%=!^&|<>])"),

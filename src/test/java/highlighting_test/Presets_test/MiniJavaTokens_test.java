@@ -57,4 +57,46 @@ class MiniJavaToken_test {
 
     assert (expect_tokens(s, "24124", new String[] {"124", "239", "666"}));
   }
+
+  // einzeilige kommentare
+  @Test
+  public void comment_test() {
+    String s = "comment: // hier steht ein kommentar.";
+    assert (expect_tokens(s, "// hier steht ein kommentar.", new String[] {}));
+  }
+
+  //mehrzeilige
+  @Test
+  public void long_comment_test() {
+    String s = "/* hier steht ein kommentar.*/ hier nicht mehr";
+    assert (expect_tokens(s, "/* hier steht ein kommentar.*/", new String[] {}));
+  }
+
+  // javadoc comment
+  @Test
+  public void javadoc_comment_test() {
+    String s = "comment: /** hier steht ein kommentar.*/ hier nicht mehr";
+    assert (expect_tokens(s, "/** hier steht ein kommentar.*/", new String[] {}));
+  }
+
+  // keywords
+  @Test
+  public void keywords_test() {
+    String s = " for i = 0 comment: // hier steht ein kommentar. if";
+    assert (expect_tokens(s, "for", new String[] {"if"}));
+  }
+
+  // char
+  @Test
+  public void char_test() {
+    String s = "f q \"fda\" 'f' + '\\t' 123 'kkkk '\\u1234'";
+    assert (expect_tokens(s, "'f'", new String[] {"'\\t'", "'\\u1234'"}));
+  }
+
+  // operators
+  @Test
+  public void operators_test() {
+    String s = " for i <= 0 for (var comment : comments) 1 / 4 > 0.";
+    assert (expect_tokens(s, "<=", new String[] {"/", ">"}));
+  }
 }
