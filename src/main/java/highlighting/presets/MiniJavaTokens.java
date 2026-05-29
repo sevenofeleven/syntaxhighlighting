@@ -28,7 +28,7 @@ public final class MiniJavaTokens {
         // javadoc
         Token.of(Pattern.compile("/\\*\\*.*\\*/"), MiniJavaColours.JAVADOC_COMMENT_COLOUR),
         // mehrzeilig
-        Token.of(Pattern.compile("/\\*(\\w+)\\*/"), MiniJavaColours.BLOCK_COMMENT_COLOUR),
+        Token.of(Pattern.compile("/\\*.*\\*/"), MiniJavaColours.BLOCK_COMMENT_COLOUR),
         // keywords
         Token.of(
             Pattern.compile(
