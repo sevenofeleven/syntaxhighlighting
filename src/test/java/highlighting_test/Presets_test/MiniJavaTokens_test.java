@@ -65,7 +65,7 @@ class MiniJavaToken_test {
     assert (expect_tokens(s, "// hier steht ein kommentar.", new String[] {}));
   }
 
-  //mehrzeilige
+  // mehrzeilige
   @Test
   public void long_comment_test() {
     String s = "/* hier steht ein kommentar.*/ hier nicht mehr";

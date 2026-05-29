@@ -38,7 +38,8 @@ public final class MiniJavaTokens {
         Token.of(
             Pattern.compile("(\\d+)(\\.(\\d+)(e[+-]?\\d+)?f?)?"), MiniJavaColours.NUMBERS_COLOUR),
         // characters
-        Token.of(Pattern.compile("'(\\\\.|\\\\u[A-Fa-f0-9]+|.)'"), MiniJavaColours.CHAR_LITERAL_COLOUR),
+        Token.of(
+            Pattern.compile("'(\\\\.|\\\\u[A-Fa-f0-9]+|.)'"), MiniJavaColours.CHAR_LITERAL_COLOUR),
         // operators
         Token.of(
             Pattern.compile("(<=|>=|==|!=|\\+\\+|--|\\+=|-=|\\|\\||&&|[+\\-*/%=!^&|<>])"),
