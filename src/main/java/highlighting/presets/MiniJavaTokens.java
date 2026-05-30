@@ -24,7 +24,7 @@ public final class MiniJavaTokens {
         // annotations
         Token.of(Pattern.compile("@(\\S+)"), MiniJavaColours.ANNOTATION_COLOUR),
         // comments
-        Token.of(Pattern.compile("//.*$"), MiniJavaColours.BLOCK_COMMENT_COLOUR),
+        Token.of(Pattern.compile("//.*$"), MiniJavaColours.LINE_COMMENT_COLOUR),
         // javadoc
         Token.of(Pattern.compile("/\\*\\*.*\\*/"), MiniJavaColours.JAVADOC_COMMENT_COLOUR),
         // mehrzeilig
