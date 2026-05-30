@@ -34,10 +34,10 @@ public class RegexHighlighter extends SyntaxHighlighter {
       HighlightRegion r = regions.get(i);
       newRegions.add(r);
 
-        // skip ..
-        do {
-            i++;
-        } while (i < regions.size() && regions.get(i).start() < r.end());
+      // skip ..
+      do {
+        i++;
+      } while (i < regions.size() && regions.get(i).start() < r.end());
     }
     return newRegions;
   }
