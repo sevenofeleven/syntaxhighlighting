@@ -1,6 +1,7 @@
 package highlighting.presets;
 
 import highlighting.regex.Token;
+import java.awt.*;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -18,11 +19,32 @@ public final class MiniJavaTokens {
   // pattern can be selected as the "highlighted" region.
   public static List<Token> defaultTokens() {
     return List.of(
-        // Example: string literals (students should define further tokens below)
-        Token.of(Pattern.compile("\"([^\"\\\\]|\\\\.)*\""), MiniJavaColours.STRING_LITERAL_COLOUR)
-
-        // TODO: Define additional tokens for MiniJava, e.g. character literals, keywords,
-        // annotations, comments, identifiers, numbers, operators, etc.
+        // string literals
+        Token.of(Pattern.compile("\"([^\"\\\\]|\\\\.)*\""), MiniJavaColours.STRING_LITERAL_COLOUR),
+        // annotations
+        Token.of(Pattern.compile("@(\\S+)"), MiniJavaColours.ANNOTATION_COLOUR),
+        // comments
+        Token.of(Pattern.compile("//.*$"), MiniJavaColours.LINE_COMMENT_COLOUR),
+        // javadoc
+        Token.of(Pattern.compile("/\\*\\*.*\\*/"), MiniJavaColours.JAVADOC_COMMENT_COLOUR),
+        // mehrzeilig
+        Token.of(Pattern.compile("/\\*.*\\*/"), MiniJavaColours.BLOCK_COMMENT_COLOUR),
+        // keywords
+        Token.of(
+            Pattern.compile(
+                "\\b(abstract|continue|for|new|switch|assert|default|goto|package|synchronized|boolean|do|if|private|this|break|double|implements|protected|throw|byte|else|import|public|throws|case|enum|instanceof|return|transient|catch|extends|int|short|try|char|final|interface|static|void|class|finally|long|strictfp|volatile|const|float|native|super|while)\\b"),
+            MiniJavaColours.KEYWORD_COLOUR),
+        // numbers
+        Token.of(
+            Pattern.compile("(\\d+)(\\.(\\d+)(e[+-]?\\d+)?f?)?"), MiniJavaColours.NUMBERS_COLOUR),
+        // characters
+        Token.of(
+            Pattern.compile("'(\\\\.|\\\\u[A-Fa-f0-9]+|.)'"), MiniJavaColours.CHAR_LITERAL_COLOUR),
+        // operators
+        Token.of(
+            Pattern.compile("(<=|>=|==|!=|\\+\\+|--|\\+=|-=|\\|\\||&&|[+\\-*/%=!^&|<>])"),
+            MiniJavaColours.OPERATORS_COLOUR)
+        // identifiers
         );
   }
 }
