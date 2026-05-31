@@ -82,7 +82,7 @@ class MiniJavaToken_test {
   // keywords
   @Test
   public void keywords_test() {
-    String s = " for i = 0 comment: // hier steht ein kommentar. if";
+    String s = " for i = 0 comment: // hier steht ein kommentar. if forever";
     assert (expect_tokens(s, "for", new String[] {"if"}));
   }
 
